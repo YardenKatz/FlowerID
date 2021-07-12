@@ -8,12 +8,17 @@
 import UIKit
 import CoreML
 import Vision
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var bgImageView: UIImageView!
+    
     let picker = UIImagePickerController()
     var pickedImage: UIImage?
+    
+    let wikipediaURL = "https://en.wikipedia.org/w/api.php"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +38,11 @@ class ViewController: UIViewController {
         }
         
         let request = VNCoreMLRequest(model: model) { request, error in
-            let classification = request.results?.first as? VNClassificationObservation
+            guard let classification = request.results?.first as? VNClassificationObservation else {
+                fatalError("Could not classify image.")
+            }
             self.navigationItem.title = classification?.identifier.capitalized
+            self.requestInfo(flowerName: classification?.identifier)
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
@@ -42,6 +50,29 @@ class ViewController: UIViewController {
             try handler.perform([request])
         } catch {
             print(error)
+        }
+    }
+    
+    func requestInfo(flowerName: String) {
+        
+        let parameters : [String:String] = [
+            "format" : "json",
+            "action" : "query",
+            "prop" : "extracts",
+            "exintro" : "",
+            "explaintext" : "",
+            "titles" : flowerName,
+            "indexpageids" : "",
+            "redirects" : "1",
+        ]
+
+        AF.request(wikipediaURL, method: .get, parameters: parameters).responseJSON { response in
+            switch response.result {
+            case .success:
+                print(response)
+            case let .failure(error):
+                print(error)
+            }
         }
     }
 }
