@@ -41,8 +41,8 @@ class ViewController: UIViewController {
             guard let classification = request.results?.first as? VNClassificationObservation else {
                 fatalError("Could not classify image.")
             }
-            self.navigationItem.title = classification?.identifier.capitalized
-            self.requestInfo(flowerName: classification?.identifier)
+            self.navigationItem.title = classification.identifier.capitalized
+            self.requestInfo(flowerName: classification.identifier)
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
