@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         
         let request = VNCoreMLRequest(model: model) { request, error in
             let classification = request.results?.first as? VNClassificationObservation
-            self.navigationItem.title = classification?.identifier
+            self.navigationItem.title = classification?.identifier.capitalized
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
