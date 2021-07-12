@@ -13,6 +13,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var bgImageView: UIImageView!
     
     let picker = UIImagePickerController()
@@ -69,7 +70,14 @@ class ViewController: UIViewController {
         AF.request(wikipediaURL, method: .get, parameters: parameters).responseJSON { response in
             switch response.result {
             case .success:
-                print(response)
+                
+                let flowerJSON: JSON = JSON(response.value ?? "")
+                print(flowerJSON)
+                let pageId = flowerJSON["query"]["pageids"][0].stringValue
+                let flowerDescription = flowerJSON["query"]["pages"][pageId]["extract"].stringValue
+                
+                self.descriptionLbl.text = flowerDescription
+                
             case let .failure(error):
                 print(error)
             }
