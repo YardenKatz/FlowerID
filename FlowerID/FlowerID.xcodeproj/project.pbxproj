@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1DB477871779640892BEC821 /* Pods_FlowerID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BBD376DD05EBA02CF3B056 /* Pods_FlowerID.framework */; };
+		E024CFEF269C2B4F00510FB3 /* FlowerClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E024CFEE269C2B4F00510FB3 /* FlowerClassifier.mlmodel */; };
+
 		E05A103B26847EC1002F2A9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A103A26847EC1002F2A9C /* AppDelegate.swift */; };
 		E05A103D26847EC1002F2A9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A103C26847EC1002F2A9C /* SceneDelegate.swift */; };
 		E05A103F26847EC1002F2A9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A103E26847EC1002F2A9C /* ViewController.swift */; };
@@ -20,6 +22,7 @@
 		5304D6A6ABED770D76D51C30 /* Pods-FlowerID.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowerID.release.xcconfig"; path = "Target Support Files/Pods-FlowerID/Pods-FlowerID.release.xcconfig"; sourceTree = "<group>"; };
 		8DCCA6485B4EE107DD7FE4A7 /* Pods-FlowerID.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowerID.debug.xcconfig"; path = "Target Support Files/Pods-FlowerID/Pods-FlowerID.debug.xcconfig"; sourceTree = "<group>"; };
 		D8BBD376DD05EBA02CF3B056 /* Pods_FlowerID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowerID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E024CFEE269C2B4F00510FB3 /* FlowerClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlowerClassifier.mlmodel; sourceTree = "<group>"; };
 		E05A103726847EC1002F2A9C /* FlowerID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05A103A26847EC1002F2A9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E05A103C26847EC1002F2A9C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 				E05A104326847EC6002F2A9C /* Assets.xcassets */,
 				E05A104526847EC6002F2A9C /* LaunchScreen.storyboard */,
 				E05A104826847EC6002F2A9C /* Info.plist */,
+				E024CFEE269C2B4F00510FB3 /* FlowerClassifier.mlmodel */,
 			);
 			path = FlowerID;
 			sourceTree = "<group>";
@@ -206,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E024CFEF269C2B4F00510FB3 /* FlowerClassifier.mlmodel in Sources */,
 				E05A103F26847EC1002F2A9C /* ViewController.swift in Sources */,
 				E05A103B26847EC1002F2A9C /* AppDelegate.swift in Sources */,
 				E05A103D26847EC1002F2A9C /* SceneDelegate.swift in Sources */,
